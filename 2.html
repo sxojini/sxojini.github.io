@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>태양계 — 별빛기행</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&family=Nanum+Myeongjo:wght@400;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        ul {
+            list-style-type: none;
+        }
+        body {
+            font-family: "맑은 고딕", "돋음", Verdana, sans-serif;
+            font-size: 100%;
+            background-color: #03030A; /* 더 깊고 어두운 우주 */
+            color: #F0EEE8; /* 약간 따뜻한 본문 텍스트 톤 */
+        }
+
+        header {
+            width: 100%;
+            height: 30vh;
+            min-height: 200px;
+            background-image: url(Designer\ \(1\).png);
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        header a {
+            text-decoration: none;
+        }
+        header h1 {
+            font-family: 'Nanum Myeongjo', serif;
+            font-size: 2.8em;
+            font-weight: 800;
+            color: #ffffff;
+            letter-spacing: 0.3em;
+            text-shadow: 0 2px 16px rgba(0,0,0,0.8);
+        }
+        header p {
+            margin-top: 10px;
+            font-size: 0.85em;
+            color: #7AB8D4; /* 차가운 하늘색 — 별빛 느낌 강조 */
+            letter-spacing: 0.15em;
+            text-shadow: 0 1px 8px rgba(0,0,0,0.9);
+        }
+
+        /* ── 메뉴바 ── */
+        nav#navbar {
+            background-color: #03030A;
+            border-bottom: 2px solid #1E1A3A; /* 중립적인 구분선 */
+            text-align: center;
+        }
+        nav#navbar ul {
+            display: inline-flex;
+            align-items: center;
+        }
+        nav#navbar li {
+            display: flex;
+            align-items: center;
+        }
+        nav#navbar li:not(:last-child)::after {
+            content: '│';
+            color: #1E1A3A; /* 중립적인 구분선 */
+        }
+        nav#navbar a {
+            font-family: 'Nanum Gothic', sans-serif;
+            color: #F0EEE8;
+            padding: 15px 22px;
+            display: block;
+            text-decoration: none;
+            font-size: 0.93em;
+            letter-spacing: 0.05em;
+            transition: color 0.2s ease;
+        }
+        nav#navbar a:hover {
+            color: #C8A84B; /* 호버 시 별빛 금색 */
+        }
+        nav#navbar a.active {
+            color: #C8A84B; /* 활성화 메뉴 포인트 색: 별빛 금색 */
+            font-weight: 700;
+        }
+
+        /* ── 본문 래퍼 ── */
+        .content-wrap {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 50px 40px;
+        }
+
+        /* ── 페이지 인트로 ── */
+        .page-intro {
+            margin-bottom: 50px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #1E1A3A; /* 중립적인 구분선 */
+        }
+        .page-intro h2 {
+            font-family: 'Nanum Myeongjo', serif;
+            font-size: 1.8em;
+            font-weight: 700;
+            color: #ffffff;
+            border-left: 4px solid #C8A84B; /* 포인트 색: 별빛 금색 */
+            padding-left: 16px;
+            margin-bottom: 14px;
+        }
+        .page-intro p {
+            font-size: 0.93em;
+            line-height: 180%;
+            color: #F0EEE8;
+            padding-left: 20px;
+            opacity: 0.85;
+        }
+
+        /* ── 섹션 타이틀 ── */
+        .section-title {
+            font-family: 'Nanum Myeongjo', serif;
+            font-size: 1.3em;
+            font-weight: 700;
+            color: #7AB8D4; /* 제목 강조색: 차가운 하늘색 */
+            border-bottom: 2px solid #C8A84B; /* 포인트 색: 별빛 금색 */
+            padding-bottom: 10px;
+            margin-bottom: 24px;
+        }
+
+        /* ── 행성 표 ── */
+        #planets {
+            margin-bottom: 60px;
+        }
+        #planets table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        #planets thead th {
+            background-color: #0D0B1E; /* 덜 보라, 더 어두운 심우주 카드 배경 */
+            padding: 12px 14px;
+            text-align: left;
+            color: #ffffff;
+            font-size: 0.88em;
+            letter-spacing: 0.05em;
+            border-bottom: 2px solid #C8A84B;
+        }
+        #planets tbody tr {
+            border-bottom: 1px solid #1E1A3A; /* 중립적인 구분선 */
+        }
+        #planets tbody td {
+            padding: 14px 14px;
+            font-size: 0.9em;
+            vertical-align: middle;
+            line-height: 160%;
+        }
+        #planets .td-name {
+            font-weight: 700;
+            color: #ffffff;
+            white-space: nowrap;
+            width: 80px;
+        }
+        #planets .td-desc {
+            color: #F0EEE8;
+            opacity: 0.9;
+        }
+        #planets .td-temp {
+            color: #7AB8D4; /* 기온 강조색: 차가운 하늘색 */
+            font-weight: 700;
+            white-space: nowrap;
+            width: 110px;
+        }
+
+        /* ── 갤러리 ── */
+        #gallery {
+            margin-bottom: 40px;
+        }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+        }
+        .gallery-item {
+            background-color: #0D0B1E; /* 덜 보라, 더 어두운 심우주 카드 배경 */
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #1E1A3A;
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            display: block;
+        }
+        .gallery-item p {
+            font-size: 0.85em;
+            color: #F0EEE8;
+            text-align: center;
+            padding: 10px 0;
+            opacity: 0.9;
+        }
+
+        /* ── 푸터 ── */
+        footer {
+            background-color: #03030A;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 20px;
+            font-size: 0.8em;
+            color: #666677;
+            border-top: 1px solid #1E1A3A; /* 중립적인 구분선 */
+            letter-spacing: 0.05em;
+        }
+
+        /* ── 반응형 ── */
+        @media only screen and (max-width: 768px) {
+            .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+            nav#navbar ul { flex-wrap: wrap; justify-content: center; }
+            nav#navbar li:not(:last-child)::after { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 헤더 -->
+    <header>
+        <h1>태양계</h1>
+        <a href="index.html"><p>별빛기행 · 밤하늘 안내서</p></a>
+    </header>
+
+    <!-- 메뉴바 -->
+    <nav id="navbar">
+        <ul>
+            <li><a href="1.html">별자리도감</a></li>
+            <li><a href="2.html" class="active">태양계</a></li>
+            <li><a href="3.html">천문현상</a></li>
+            <li><a href="4.html">별 관측 명소</a></li>
+            <li><a href="5.html">우주 작품 추천</a></li>
+        </ul>
+    </nav>
+
+    <!-- 본문 -->
+    <div class="content-wrap">
+
+        <!-- 페이지 인트로 -->
+        <div class="page-intro">
+            <h2>태양계</h2>
+            <p>우리 태양계는 중심에 있는 항성인 태양과 그 인력에 이끌려 공전하는 대형 행성 8개, 왜소행성, 그리고 수많은 위성과 소행성, 혜성 등으로 이루어져 있습니다. 약 46억 년 전 거대한 분자운이 중력 붕괴를 일으키면서 형성되었습니다.<br>
+            태양계 행성은 성분에 따라 암석으로 이루어진 <strong>지구형 행성</strong>(수성, 금성, 지구, 화성)과 가스 및 얼음으로 이루어진 <strong>목성형 행성</strong>(목성, 토성, 천왕성, 해왕성)으로 나뉩니다.</p>
+        </div>
+
+        <!-- 행성 표 -->
+        <div id="planets">
+            <h3 class="section-title">8개의 행성</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>행성</th>
+                        <th>특징</th>
+                        <th>평균 기온</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="td-name">수성</td>
+                        <td class="td-desc">태양과 가장 가까운 행성으로, 대기가 거의 없어 낮과 밤의 기온 차이가 매우 심합니다.</td>
+                        <td class="td-temp">약 167°C</td>
+                    </tr>
+                    <tr>
+                        <td class="td-name">금성</td>
+                        <td class="td-desc">두꺼운 이산화탄소 대기층의 온실효과로 인해 태양계에서 가장 뜨거운 행성입니다.</td>
+                        <td class="td-temp">약 464°C</td>
+                    </tr>
+                    <tr>
+                        <td class="td-name">지구</td>
+                        <td class="td-desc">풍부한 물과 대기, 그리고 적당한 온도로 인류를 비롯한 생명체가 살아가는 유일한 행성입니다.</td>
+                        <td class="td-temp">약 15°C</td>
+                    </tr>
+                    <tr>
+                        <td class="td-name">화성</td>
+                        <td class="td-desc">표면의 산화철 성분 때문에 붉게 보이며, 극관(얼음และ 드라이아이스)이 존재해 생명체 탐사가 활발합니다.</td>
+                        <td class="td-temp">약 -62°C</td>
+                    </tr>
+                    <tr>
+                        <td class="td-name">목성</td>
+                        <td class="td-desc">태양계에서 가장 큰 행성으로, 거대한 폭풍인 '대적점'과 수많은 위성을 가지고 있습니다.</td>
+                        <td class="td-temp">약 -108°C</td>
+                    </tr>
+                    <tr>
+                        <td class="td-name">토성</td>
+                        <td class="td-desc">얼음과 암석 파편으로 이루어진 아름답고 거대한 고리를 가지고 있으며, 밀도가 물보다 낮습니다.</td>
+                        <td class="td-temp">약 -139°C</td>
+                    </tr>
+                    <tr>
+                        <td class="td-name">천왕성</td>
+                        <td class="td-desc">자전축이 약 98도 누워있어 옆으로 누운 채 공전하며, 청록색 빛을 띱니다.</td>
+                        <td class="td-temp">약 -197°C</td>
+                    </tr>
+                    <tr>
+                        <td class="td-name">해왕성</td>
+                        <td class="td-desc">태양계의 가장 바깥쪽 행성으로, 푸른빛을 띠며 초속 수백 미터의 강한 대기 폭풍이 붑니다.</td>
+                        <td class="td-temp">약 -201°C</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- 행성 갤러리 -->
+        <div id="gallery">
+            <h3 class="section-title">행성 갤러리</h3>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="수성.jpg" alt="수성">
+                    <p>수성</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="금성.jpg" alt="금성">
+                    <p>금성</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1614730321146-b6fa6a46bcb4?w=400" alt="지구">
+                    <p>지구</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="화성.jpg" alt="화성">
+                    <p>화성</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="목성.jpg" alt="목성">
+                    <p>목성</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="토성.jpg" alt="토성">
+                    <p>토성</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="천왕성.jpg" alt="천왕성">
+                    <p>천왕성</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="해왕성.jpg" alt="해왕성">
+                    <p>해왕성</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        COPYRIGHT(C) SEOJIN All Rights Reserved
+    </footer>
+
+</body>
+</html>

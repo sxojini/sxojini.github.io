@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>별 관측 명소 — 뱔빛기행</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&family=Nanum+Myeongjo:wght@400;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        ul {
+            list-style-type: none;
+        }
+        body {
+            font-family: "맑은 고딕", "돋음", Verdana, sans-serif;
+            font-size: 100%;
+            background-color: #03030A; /* 더 깊고 어두운 우주 */
+            color: #F0EEE8; /* 약간 따뜻한 본문 텍스트 톤 */
+        }
+        header {
+            width: 100%;
+            height: 30vh;
+            min-height: 200px;
+            background-image: url(Designer\ \(1\).png);
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        header a {
+            text-decoration: none;
+        }
+        header h1 {
+            font-family: 'Nanum Myeongjo', serif;
+            font-size: 2.8em;
+            font-weight: 800;
+            color: #ffffff;
+            letter-spacing: 0.3em;
+            text-shadow: 0 2px 16px rgba(0,0,0,0.8);
+        }
+        header p {
+            margin-top: 10px;
+            font-size: 0.85em;
+            color: #7AB8D4; /* 차가운 하늘색 — 별빛 느낌 강조 */
+            letter-spacing: 0.15em;
+            text-shadow: 0 1px 8px rgba(0,0,0,0.9);
+        }
+
+        /* ── 메뉴바 ── */
+        nav#navbar {
+            background-color: #03030A;
+            border-bottom: 2px solid #1E1A3A; /* 중립적인 구분선 */
+            text-align: center;
+        }
+        nav#navbar ul {
+            display: inline-flex;
+            align-items: center;
+        }
+        nav#navbar li {
+            display: flex;
+            align-items: center;
+        }
+        nav#navbar li:not(:last-child)::after {
+            content: '│';
+            color: #1E1A3A; /* 중립적인 구분선 */
+        }
+        nav#navbar a {
+            font-family: 'Nanum Gothic', sans-serif;
+            color: #F0EEE8;
+            padding: 15px 22px;
+            display: block;
+            text-decoration: none;
+            font-size: 0.93em;
+            letter-spacing: 0.05em;
+            transition: color 0.2s ease;
+        }
+        nav#navbar a:hover {
+            color: #C8A84B; /* 호버 시 별빛 금색 */
+        }
+        nav#navbar a.active {
+            color: #C8A84B; /* 활성화 메뉴 포인트 색: 별빛 금색 */
+            font-weight: 700;
+        }
+
+        .content-wrap {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 50px 40px;
+        }
+
+        .page-intro {
+            margin-bottom: 50px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #1E1A3A; /* 중립적인 구분선 */
+        }
+        .page-intro h2 {
+            font-family: 'Nanum Myeongjo', serif;
+            font-size: 1.8em;
+            font-weight: 700;
+            color: #ffffff;
+            border-left: 4px solid #C8A84B; /* 포인트 색: 별빛 금색 */
+            padding-left: 16px;
+            margin-bottom: 14px;
+        }
+        .page-intro p {
+            font-size: 0.93em;
+            line-height: 180%;
+            color: #F0EEE8;
+            padding-left: 20px;
+            opacity: 0.85;
+        }
+
+        .section-title {
+            font-family: 'Nanum Myeongjo', serif;
+            font-size: 1.3em;
+            font-weight: 700;
+            color: #7AB8D4; /* 제목 강조색: 차가운 하늘색 */
+            border-bottom: 2px solid #C8A84B; /* 포인트 색: 별빛 금색 */
+            padding-bottom: 10px;
+            margin-bottom: 24px;
+        }
+
+        #spots {
+            margin-bottom: 60px;
+        }
+        .spot-card {
+            display: grid;
+            grid-template-columns: 1fr 220px;
+            background-color: #0D0B1E; /* 덜 보라, 더 어두운 심우주 카드 배경 */
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 20px;
+            border: 1px solid #1E1A3A;
+        }
+        .spot-card .spot-info {
+            padding: 24px 26px;
+        }
+        .spot-card .spot-info .spot-tag {
+            display: inline-block;
+            background-color: #C8A84B; /* 포인트 색: 별빛 금색 */
+            color: #03030A;
+            font-size: 0.75em;
+            font-weight: 700;
+            padding: 2px 8px;
+            border-radius: 3px;
+            margin-bottom: 10px;
+        }
+        .spot-card .spot-info h3 {
+            font-family: 'Nanum Myeongjo', serif;
+            font-size: 1.3em;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 6px;
+        }
+        .spot-card .spot-info .spot-addr {
+            font-size: 0.8em;
+            color: #7AB8D4; /* 기온/주소 강조색: 차가운 하늘색 */
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+        .spot-card .spot-info p {
+            font-size: 0.88em;
+            line-height: 175%;
+            color: #F0EEE8;
+            opacity: 0.85;
+        }
+        .spot-card img {
+            width: 220px;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        
+        #guide {
+            margin-bottom: 40px;
+        }
+        .guide-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        .guide-box {
+            background-color: #0D0B1E; /* 덜 보라, 더 어두운 심우주 카드 배경 */
+            border-radius: 8px;
+            padding: 22px 20px;
+            border: 1px solid #1E1A3A;
+        }
+        .guide-box h4 {
+            font-family: 'Nanum Myeongjo', serif;
+            font-size: 1em;
+            font-weight: 700;
+            color: #C8A84B; /* 강조 소제목 색: 별빛 금색 */
+            margin-bottom: 14px;
+        }
+        .guide-box ul {
+            list-style: none;
+        }
+        .guide-box ul li {
+            font-size: 0.85em;
+            color: #F0EEE8;
+            line-height: 155%;
+            margin-bottom: 10px;
+            padding-left: 12px;
+            border-left: 2px solid #1E1A3A; /* 중립적인 구분선 */
+            opacity: 0.9;
+        }
+        .guide-box ul li strong {
+            color: #7AB8D4; /* 가이드 내부 강조구문 색: 차가운 하늘색 */
+        }
+
+        footer {
+            background-color: #03030A;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 20px;
+            font-size: 0.8em;
+            color: #666677;
+            border-top: 1px solid #1E1A3A; /* 중립적인 구분선 */
+            letter-spacing: 0.05em;
+        }
+        @media only screen and (max-width: 768px) {
+            .spot-card { grid-template-columns: 1fr; }
+            .spot-card img { width: 100%; height: 180px; }
+            .guide-grid { grid-template-columns: 1fr; }
+            nav#navbar ul { flex-wrap: wrap; justify-content: center; }
+            nav#navbar li:not(:last-child)::after { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>별 관측 명소</h1>
+        <a href="index.html"><p>별빛기행 · 밤하늘 안내서</p></a>
+    </header>
+    <nav id="navbar">
+        <ul>
+            <li><a href="1.html">별자리도감</a></li>
+            <li><a href="2.html">태양계</a></li>
+            <li><a href="3.html">천문현상</a></li>
+            <li><a href="4.html" class="active">별 관측 명소</a></li>
+            <li><a href="5.html">우주 작품 추천</a></li>
+        </ul>
+    </nav>
+
+    <div class="content-wrap">
+        <div class="page-intro">
+            <h2>별 관측 명소</h2>
+            <p>도시의 불빛에서 벗어나 맑은 공기와 깊은 어둠이 찾아오는 곳에서는 눈이 시리도록 가득한 밤하늘의 별들을 만날 수 있습니다. 국내의 대표적인 은하수 및 별 관측 명소들을 소개합니다.</p>
+        </div>
+
+        <div id="spots">
+            <h3 class="section-title">국내 추천 명소</h3>
+
+            <div class="spot-card">
+                <div class="spot-info">
+                    <span class="spot-tag">경기도</span>
+                    <h3>양평 벗고개 터널</h3>
+                    <p class="spot-addr">경기 양평군 양동면 금왕리 187</p>
+                    <p>수도권에서 접근성이 가장 좋은 은하수 명소 중 하나입니다. 어두운 터널 프레임 안으로 쏟아지는 밤하늘을 담을 수 있어 사진작가들에게 특히 인기가 높습니다.</p>
+                </div>
+                <img src="양평.png" alt="양평 벗고개 터널">
+            </div>
+
+            <div class="spot-card">
+                <div class="spot-info">
+                    <span class="spot-tag">강원도</span>
+                    <h3>강릉 안반데기</h3>
+                    <p class="spot-addr">강원도 강릉시 왕산면 안반데기1길</p>
+                    <p>해발 1,100m의 고지대에 위치한 국내 최대 규모의 고랭지 채소밭입니다. 사방이 트여 있어 지평선 위로 떠오르는 거대한 은하수와 별무리를 관측하기에 최적의 장소입니다.</p>
+                </div>
+                <img src="안반데기.jpg" alt="강릉 안반데기">
+            </div>
+
+            <div class="spot-card">
+                <div class="spot-info">
+                    <span class="spot-tag">경상도</span>
+                    <h3>영양 반딧불이생태공원</h3>
+                    <p class="spot-addr">경북 영양군 수비면 수하계곡로 125-18</p>
+                    <p>아시아 최초로 '국제밤하늘보호공원'으로 지정된 곳입니다. 인공 조명이 엄격히 제한되어 있어 우리나라에서 가장 어둡고 깨끗한 밤하늘와 수많은 별을 만날 수 있습니다.</p>
+                </div>
+                <img src="영양.png" alt="영양 반딧불이생태공원">
+            </div>
+
+            <div class="spot-card">
+                <div class="spot-info">
+                    <span class="spot-tag">전라도</span>
+                    <h3>고흥 우주천문과학관</h3>
+                    <p class="spot-addr">전라남도 고흥군 도양읍 장기산선암길 353</p>
+                    <p>우주의 도시 고흥에 위치한 천문대입니다. 아름다운 다도해의 풍경과 함께 최첨단 천체 망원경을 통해 행성, 성단, 성운 등을 직접 관측할 수 있는 교육 명소입니다.</p>
+                </div>
+                <img src="고흥.jpg" alt="고흥 우주천문과학관">
+            </div>
+
+        </div>
+
+        <div id="guide">
+            <h3 class="section-title">관측 필수 가이드</h3>
+            <div class="guide-grid">
+                <div class="guide-box">
+                    <h4>출발 전 필수 체크</h4>
+                    <ul>
+                        <li><strong>구름량 확인:</strong> 기상청의 중·상층운 예측 지도를 확인하고 운량이 최저인 날을 고르세요.</li>
+                        <li><strong>달이 없는 날:</strong> 보름달 주변은 빛이 너무 강합니다. 그믐 전후 3일이 은하수 관측의 최적기입니다.</li>
+                        <li><strong>미세먼지 확인:</strong> 하늘이 맑아도 미세먼지 수치가 높으면 별빛이 흐려집니다.</li>
+                    </ul>
+                </div>
+                <div class="guide-box">
+                    <h4>현장 필수 준비물</h4>
+                    <ul>
+                        <li><strong>방한 의류 &amp; 핫팩:</strong> 별 관측지는 주로 고지대나 산속이라 여름철 밤에도 초겨울처럼 매우 춥습니다.</li>
+                        <li><strong>돗자리 또는 캠핑의자:</strong> 밤하늘을 오랫동안 올려다보려면 목을 편하게 받쳐줄 장비가 유용합니다.</li>
+                    </ul>
+                </div>
+                <div class="guide-box">
+                    <h4>관측지 매너</h4>
+                    <ul>
+                        <li><strong>차량 진입 시</strong> 전조등은 미리 끄거나 최소화하여 타인의 관측과 촬영을 방해하지 마세요.</li>
+                        <li><strong>쓰레기는 반드시</strong> 다시 가져가 관측 장소를 깨끗이 유지해 주세요.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        COPYRIGHT(C) SEOJIN All Rights Reserved
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>별자리도감 — 별빛기행</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&family=Nanum+Myeongjo:wght@400;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        ul {
+            list-style-type: none;
+        }
+        body {
+            font-family: "맑은 고딕", "돋음", Verdana, sans-serif;
+            font-size: 100%;
+            background-color: #03030A; 
+            color: #F0EEE8; 
+        }
+        header {
+            width: 100%;
+            height: 30vh;
+            min-height: 200px;
+            background-image: url(Designer\ \(1\).png);
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        header a {
+            text-decoration: none;
+        }
+        header h1 {
+            font-family: 'Nanum Myeongjo', serif;
+            font-size: 2.8em;
+            font-weight: 800;
+            color: #ffffff;
+            letter-spacing: 0.3em;
+            text-shadow: 0 2px 16px rgba(0,0,0,0.8);
+        }
+        header p {
+            margin-top: 10px;
+            font-size: 0.85em;
+            color: #7AB8D4; 
+            letter-spacing: 0.15em;
+            text-shadow: 0 1px 8px rgba(0,0,0,0.9);
+        }
+        nav#navbar {
+            background-color: #03030A;
+            border-bottom: 2px solid #1E1A3A; 
+            text-align: center;
+        }
+        nav#navbar ul {
+            display: inline-flex;
+            align-items: center;
+        }
+        nav#navbar li {
+            display: flex;
+            align-items: center;
+        }
+        nav#navbar li:not(:last-child)::after {
+            content: '│';
+            color: #1E1A3A; 
+        }
+        nav#navbar a {
+            font-family: 'Nanum Gothic', sans-serif;
+            color: #F0EEE8;
+            padding: 15px 22px;
+            display: block;
+            text-decoration: none;
+            font-size: 0.93em;
+            letter-spacing: 0.05em;
+            transition: color 0.2s ease;
+        }
+        nav#navbar a:hover {
+            color: #C8A84B; 
+        }
+        nav#navbar a.active {
+            color: #C8A84B; 
+            font-weight: 700;
+        }
+
+        .content-wrap {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 50px 40px;
+        }
+
+        .page-intro {
+            margin-bottom: 50px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #1E1A3A; 
+        }
+        .page-intro h2 {
+            font-family: 'Nanum Myeongjo', serif;
+            font-size: 1.8em;
+            font-weight: 700;
+            color: #ffffff;
+            border-left: 4px solid #C8A84B;
+            padding-left: 16px;
+            margin-bottom: 14px;
+        }
+        .page-intro p {
+            font-size: 0.93em;
+            line-height: 180%;
+            color: #F0EEE8;
+            padding-left: 20px;
+            opacity: 0.85;
+        }
+
+        .section-title {
+            font-family: 'Nanum Myeongjo', serif;
+            font-size: 1.3em;
+            font-weight: 700;
+            color: #7AB8D4; 
+            border-bottom: 2px solid #C8A84B; 
+            padding-bottom: 10px;
+            margin-bottom: 24px;
+        }
+
+        #constellations {
+            margin-bottom: 60px;
+        }
+        .constellation-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+        .con-card {
+            background-color: #0D0B1E; 
+            border-radius: 8px;
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 160px 1fr;
+            border: 1px solid #1E1A3A;
+        }
+        .con-card img {
+            width: 160px;
+            height: 160px;
+            object-fit: cover;
+            display: block;
+        }
+        .con-card .con-info {
+            padding: 18px 20px;
+        }
+        .con-card .con-info .season {
+            display: inline-block;
+            background-color: #C8A84B; 
+            color: #03030A;
+            font-size: 0.75em;
+            font-weight: 700;
+            padding: 2px 8px;
+            border-radius: 3px;
+            margin-bottom: 8px;
+        }
+        .con-card .con-info h3 {
+            font-family: 'Nanum Myeongjo', serif;
+            font-size: 1.2em;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+        .con-card .con-info p {
+            font-size: 0.83em;
+            line-height: 165%;
+            color: #F0EEE8;
+            opacity: 0.85;
+        }
+
+        #season-map {
+            margin-bottom: 40px;
+        }
+        .season-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+        .season-item {
+            background-color: #0D0B1E; 
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #1E1A3A;
+        }
+        .season-item img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            display: block;
+        }
+        .season-item .season-info {
+            padding: 14px 16px;
+        }
+        .season-item .season-info .season-label {
+            display: inline-block;
+            background-color: #C8A84B; 
+            color: #03030A;
+            font-size: 0.75em;
+            font-weight: 700;
+            padding: 2px 8px;
+            border-radius: 3px;
+            margin-bottom: 8px;
+        }
+        .season-item .season-info h3 {
+            font-family: 'Nanum Myeongjo', serif;
+            font-size: 1.1em;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 6px;
+        }
+        .season-item .season-info p {
+            font-size: 0.82em;
+            color: #F0EEE8;
+            line-height: 155%;
+            opacity: 0.85;
+        }
+
+        footer {
+            background-color: #03030A;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 20px;
+            font-size: 0.8em;
+            color: #666677;
+            border-top: 1px solid #1E1A3A; 
+            letter-spacing: 0.05em;
+        }
+
+        @media only screen and (max-width: 768px) {
+            .constellation-grid { grid-template-columns: 1fr; }
+            .con-card { grid-template-columns: 120px 1fr; }
+            .con-card img { width: 120px; height: 120px; }
+            .season-grid { grid-template-columns: 1fr; }
+            nav#navbar ul { flex-wrap: wrap; justify-content: center; }
+            nav#navbar li:not(:last-child)::after { display: none; }
+        }
+        
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>별자리도감</h1>
+        <a href="index.html"><p>별빛기행 · 밤하늘 안내서</p></a>
+    </header>
+
+    <!-- 메뉴바 -->
+    <nav id="navbar">
+        <ul>
+            <li><a href="1.html" class="active">별자리도감</a></li>
+            <li><a href="2.html">태양계</a></li>
+            <li><a href="3.html">천문현상</a></li>
+            <li><a href="4.html">별 관측 명소</a></li>
+            <li><a href="5.html">우주 작품 추천</a></li>
+        </ul>
+    </nav>
+
+    <!-- 본문 -->
+    <div class="content-wrap">
+
+        <!-- 페이지 인트로 -->
+        <div class="page-intro">
+            <h2>별자리도감</h2>
+            <p>밤하늘의 별들을 무리 지어 연결하고 이름을 붙인 별자리는 고대인들의 상상력과 탐험의 역사에서 시작되었습니다. 현재 국제천문연맹(IAU)이 공인한 전 하늘의 공식 별자리는 총 88개입니다.<br>지구의 공전 운동 때문에 밤하늘에 보이는 별자리들은 계절에 따라 조금씩 변화하며, 각 계절을 대표하는 아름다운 길잡이 별들이 존재합니다.</p>
+        </div>
+
+        <!-- 별자리 카드 -->
+        <div id="constellations">
+            <h3 class="section-title">대표 별자리</h3>
+            <div class="constellation-grid">
+                <div class="con-card">
+                    <img src="사자자리.jpg" alt="사자자리">
+                    <div class="con-info">
+                        <span class="season">봄철</span>
+                        <h3>사자자리</h3>
+                        <p>봄을 알리는 황도 12궁 중 하나로, 뒤집어 놓은 물음표(?) 모양의 사자 머리가 눈에 띕니다. 1등성 '레굴루스'가 유명합니다.</p>
+                    </div>
+                </div>
+                <div class="con-card">
+                    <img src="처녀자리.png" alt="처녀자리">
+                    <div class="con-info">
+                        <span class="season">봄철</span>
+                        <h3>처녀자리</h3>
+                        <p>하늘에서 두 번째로 면적이 넓은 별자리입니다. 순백색의 1등성 '스피카'를 가지고 있으며, 정의의 여신 아스트라이아의 신화가 전해집니다.</p>
+                    </div>
+                </div>
+                <div class="con-card">
+                    <img src="거문고자리.jpg" alt="거문고자리">
+                    <div class="con-info">
+                        <span class="season">여름철</span>
+                        <h3>거문고자리</h3>
+                        <p>은하수 서쪽 기슭에서 빛나는 '베가(직녀성)'를 포함합니다. 오르페우스가 연주하던 거문고 모양을 형상화한 작고 아름다운 별자리입니다.</p>
+                    </div>
+                </div>
+                <div class="con-card">
+                    <img src="전갈자리.jpg" alt="전갈자리">
+                    <div class="con-info">
+                        <span class="season">여름철</span>
+                        <h3>전갈자리</h3>
+                        <p>여름 남쪽 하늘을 대표하는 별자리로, 붉은 초거성 '안타레스'가 전갈의 심장 자리에서 빛납니다. S자 모양의 꼬리가 뚜렷하게 이어집니다.</p>
+                    </div>
+                </div>
+                <div class="con-card">
+                    <img src="페가수스자리.jpg" alt="페가수스자리">
+                    <div class="con-info">
+                        <span class="season">가을철</span>
+                        <h3>페가수스자리</h3>
+                        <p>가을 하늘의 길잡이 별자리입니다. 네 개의 별이 이루는 커다란 사각형 '페가수스의 대사각형'은 가을 밤하늘의 기준점이 됩니다.</p>
+                    </div>
+                </div>
+                <div class="con-card">
+                    <img src="안드로메다자리.jpg" alt="안드로메다자리">
+                    <div class="con-info">
+                        <span class="season">가을철</span>
+                        <h3>안드로메다자리</h3>
+                        <p>맨눈으로 볼 수 있는 가장 먼 천체인 '안드로메다 은하(M31)'를 품고 있습니다. 지구에서 약 250만 광년 거리에 위치한 우리 은하의 이웃 은하입니다.</p>
+                    </div>
+                </div>
+                <div class="con-card">
+                    <img src="오리온자리.jpg" alt="오리온자리">
+                    <div class="con-info">
+                        <span class="season">겨울철</span>
+                        <h3>오리온자리</h3>
+                        <p>전 하늘에서 가장 화려한 별자리 중 하나입니다. 붉은 '베텔게우스'와 푸른 '리겔', 세 별이 나란한 오리온의 허리띠가 인상적입니다.</p>
+                    </div>
+                </div>
+                <div class="con-card">
+                    <img src="쌍둥이자리.jpeg" alt="쌍둥이자리">
+                    <div class="con-info">
+                        <span class="season">겨울철</span>
+                        <h3>쌍둥이자리</h3>
+                        <p>황도 12궁 중 하나로, 쌍둥이 형제를 상징하는 두 밝은 별 '카스토르'와 '폴룩스'가 나란히 빛납니다. 12월 쌍둥이자리 유성우로도 유명합니다.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 계절별 별자리 지도 -->
+        <div id="season-map">
+            <h3 class="section-title">계절별 별자리 지도</h3>
+            <div class="season-grid">
+                <div class="season-item">
+                    <img src="봄.jpeg" alt="봄철 별자리">
+                    <div class="season-info">
+                        <span class="season-label">봄철</span>
+                        <h3>봄철 별자리</h3>
+                        <p>사자자리 · 처녀자리 · 목동자리</p>
+                    </div>
+                </div>
+                <div class="season-item">
+                    <img src="여름.jpeg" alt="여름철 별자리">
+                    <div class="season-info">
+                        <span class="season-label">여름철</span>
+                        <h3>여름철 별자리</h3>
+                        <p>거문고자리 · 전갈자리 · 궁수자리</p>
+                    </div>
+                </div>
+                <div class="season-item">
+                    <img src="가을.png" alt="가을철 별자리">
+                    <div class="season-info">
+                        <span class="season-label">가을철</span>
+                        <h3>가을철 별자리</h3>
+                        <p>페가수스자리 · 안드로메다자리 · 카시오페이아자리</p>
+                    </div>
+                </div>
+                <div class="season-item">
+                    <img src="겨울.jpeg" alt="겨울철 별자리">
+                    <div class="season-info">
+                        <span class="season-label">겨울철</span>
+                        <h3>겨울철 별자리</h3>
+                        <p>오리온자리 · 쌍둥이자리 · 황소자리</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        COPYRIGHT(C) SEOJIN All Rights Reserved
+    </footer>
+
+</body>
+</html>

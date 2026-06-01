@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>우주 작품 추천 — 별빛기행</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&family=Nanum+Myeongjo:wght@400;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        ul {
+            list-style-type: none;
+        }
+        body {
+            font-family: "맑은 고딕", "돋음", Verdana, sans-serif;
+            font-size: 100%;
+            background-color: #03030A; 
+            color: #F0EEE8; 
+        }
+        header {
+            width: 100%;
+            height: 30vh;
+            min-height: 200px;
+            background-image: url(Designer\ \(1\).png);
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        header h1 {
+            font-family: 'Nanum Myeongjo', serif;
+            font-size: 2.8em;
+            font-weight: 800;
+            color: #ffffff;
+            letter-spacing: 0.3em;
+            text-shadow: 0 2px 16px rgba(0,0,0,0.8);
+        }
+        header p {
+            margin-top: 10px;
+            font-size: 0.85em;
+            color: #7AB8D4; 
+            letter-spacing: 0.15em;
+            text-shadow: 0 1px 8px rgba(0,0,0,0.9);
+        }
+        nav#navbar {
+            background-color: #03030A;
+            border-bottom: 2px solid #1E1A3A; 
+            text-align: center;
+        }
+        nav#navbar ul {
+            display: inline-flex;
+            align-items: center;
+        }
+        nav#navbar li {
+            display: flex;
+            align-items: center;
+        }
+        nav#navbar li:not(:last-child)::after {
+            content: '│';
+            color: #1E1A3A; 
+        }
+        nav#navbar a {
+            font-family: 'Nanum Gothic', sans-serif;
+            color: #F0EEE8;
+            padding: 15px 22px;
+            display: block;
+            text-decoration: none;
+            font-size: 0.93em;
+            letter-spacing: 0.05em;
+            transition: color 0.2s ease;
+        }
+        nav#navbar a:hover {
+            color: #C8A84B; 
+        }
+        nav#navbar a.active {
+            color: #C8A84B; 
+            font-weight: 700;
+        }
+        .content-wrap {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 50px 40px;
+        }
+        .page-intro {
+            margin-bottom: 50px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #1E1A3A; 
+        }
+        .page-intro h2 {
+            font-family: 'Nanum Myeongjo', serif;
+            font-size: 1.8em;
+            font-weight: 700;
+            color: #ffffff;
+            border-left: 4px solid #C8A84B;
+            padding-left: 16px;
+            margin-bottom: 14px;
+        }
+        .page-intro p {
+            font-size: 0.93em;
+            line-height: 180%;
+            color: #F0EEE8;
+            padding-left: 20px;
+            opacity: 0.85;
+        }
+        .section-title {
+            font-family: 'Nanum Myeongjo', serif;
+            font-size: 1.3em;
+            font-weight: 700;
+            color: #7AB8D4; 
+            border-bottom: 2px solid #C8A84B; 
+            padding-bottom: 10px;
+            margin-bottom: 24px;
+        }
+        #works {
+            margin-bottom: 60px;
+        }
+        .work-card {
+            display: grid;
+            grid-template-columns: 1fr 220px;
+            background-color: #0D0B1E; 
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 20px;
+            border: 1px solid #1E1A3A;
+        }
+        .work-card .work-info {
+            padding: 24px 26px;
+        }
+        .work-card .work-info .work-tag {
+            display: inline-block;
+            background-color: #C8A84B; 
+            font-size: 0.75em;
+            font-weight: 700;
+            padding: 2px 8px;
+            border-radius: 3px;
+            margin-bottom: 10px;
+        }
+        .work-card .work-info h3 {
+            font-family: 'Nanum Myeongjo', serif;
+            font-size: 1.3em;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 6px;
+        }
+        .work-card .work-info .work-sub {
+            font-size: 0.8em;
+            color: #7AB8D4; 
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+        .work-card .work-info p {
+            font-size: 0.88em;
+            line-height: 175%;
+            color: #F0EEE8;
+            opacity: 0.85;
+        }
+        .work-card img {
+            width: 220px;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        #probes {
+            margin-bottom: 40px;
+        }
+        .probe-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        .probe-box {
+            display: flex;
+            flex-direction: column;
+            background-color: #0D0B1E; 
+            border-radius: 8px;
+            padding: 22px 20px;
+            border: 1px solid #1E1A3A;
+        }
+        .probe-box .probe-title {
+            font-size: 0.95em;
+            font-weight: 700;
+            color: #C8A84B; 
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .probe-box .probe-title .status-badge {
+            font-size: 0.75em;
+            background-color: #7AB8D4; 
+            color: #03030A;
+            padding: 1px 6px;
+            border-radius: 3px;
+            font-weight: 700;
+        }
+        .probe-box .probe-img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            border-radius: 4px;
+            display: block;
+            margin-bottom: 14px;
+            border: 1px solid #1E1A3A;
+        }
+        .probe-box p {
+            font-size: 0.85em;
+            color: #F0EEE8;
+            line-height: 155%;
+            opacity: 0.85;
+        }
+
+        footer {
+            background-color: #03030A;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 20px;
+            font-size: 0.8em;
+            color: #666677;
+            border-top: 1px solid #1E1A3A; 
+            letter-spacing: 0.05em;
+        }
+
+        @media only screen and (max-width: 768px) {
+            .work-card { grid-template-columns: 1fr; }
+            .work-card img { width: 100%; height: 180px; }
+            .probe-grid { grid-template-columns: 1fr; }
+            nav#navbar ul { flex-wrap: wrap; justify-content: center; }
+            nav#navbar li:not(:last-child)::after { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>우주 작품 추천</h1>
+        <a href="index.html"><p>별빛기행 · 밤하늘 안내서</p></a>
+    </header>
+    <nav id="navbar">
+        <ul>
+            <li><a href="1.html">별자리도감</a></li>
+            <li><a href="2.html">태양계</a></li>
+            <li><a href="3.html">천문현상</a></li>
+            <li><a href="4.html">별 관측 명소</a></li>
+            <li><a href="5.html" class="active">우주 작품 추천</a></li>
+        </ul>
+    </nav>
+    <div class="content-wrap">
+
+        <div class="page-intro">
+            <h2>우주 작품 추천</h2>
+            <p>전 세계적인 사랑을 받은 SF 소설과 영화 명작들을 소개합니다.</p>
+        </div>
+
+        <div id="works">
+            <h3 class="section-title">추천 작품</h3>
+
+            <div class="work-card">
+                <div class="work-info">
+                    <span class="work-tag">SF 소설</span>
+                    <h3>프로젝트 헤일메리</h3>
+                    <p class="work-sub">저자 · 앤디 위어 (Andy Weir)</p>
+                    <p>태양을 갉아먹는 우주 미생물 때문에 빙하기 위기에 처한 인류를 구하기 위해 홀로 외우주로 떠난 과학자 '라일랜드 그레이스'의 이야기입니다. 유쾌하고 철저한 과학적 고증, 그리고 우주에서 만난 외계 생명체 동료 '로키'와의 눈물겨운 우정과 연대가 짜릿한 감동을 선사합니다.</p>
+                </div>
+                <img src="헤일메리.jpg" alt="프로젝트 헤일메리">
+            </div>
+
+            <div class="work-card">
+                <div class="work-info">
+                    <span class="work-tag">SF 영화</span>
+                    <h3>인터스텔라</h3>
+                    <p class="work-sub">감독 · 크리스토퍼 놀란 (Christopher Nolan)</p>
+                    <p>식량 부족과 기후 변화로 황폐해진 지구를 대체할 새로운 행성을 찾기 위해 웜홀을 통과하는 우주 비행사들의 탐험을 그린 영화입니다. 블랙홀과 상대성 이론, 차원을 넘나드는 압도적인 시각 효과와 가족을 향한 사랑의 가치를 웅장하게 그려낸 걸작입니다.</p>
+                </div>
+                <img src="인터스텔라.png" alt="인터스텔라">
+            </div>
+
+            <div class="work-card">
+                <div class="work-info">
+                    <span class="work-tag">SF 소설·영화</span>
+                    <h3>마션</h3>
+                    <p class="work-sub">저자 · 앤디 위어 / 감독 · 리들리 스콧</p>
+                    <p>화성 탐사 중 폭풍을 만나 홀로 남겨진 식물학자 '마크 와트니'의 화성 생존기입니다. 절망적인 상황 속에서도 특유의 긍정적인 성격과 기발한 과학 지식(화성에서 감자 키우기 등)을 총동원해 지구로 돌아가기 위해 투쟁하는 유쾌하고도 감동적인 서사입니다.</p>
+                </div>
+                <img src="마션.jpg" alt="마션">
+            </div>
+
+            <div class="work-card">
+                <div class="work-info">
+                    <span class="work-tag">SF 영화</span>
+                    <h3>그래비티</h3>
+                    <p class="work-sub">감독 · 알폰소 쿠아론 (Alfonso Cuarón)</p>
+                    <p>우주 쓰레기와의 충돌 사고로 인해 우주 한가운데에 홀로 고립된 우주 비행사의 사투를 다룬 영화입니다. 광활하고 고요하면서도 숨 막히는 우주 공간을 완벽하게 재현해 냈으며, 삶에 대한 강렬한 의지와 재탄생을 미니멀하면서도 힘 있게 보여줍니다.</p>
+                </div>
+                <img src="그래비티.jpg" alt="그래비티">
+            </div>
+
+        </div>
+
+        <!-- 탐사선 근황 -->
+        <div id="probes">
+            <h3 class="section-title">우주 탐사선 근황</h3>
+            <div class="probe-grid">
+                <div class="probe-box">
+                    <p class="probe-title">보이저 1호 </p>
+                    <img src="보이저1호.jpg" alt="보이저 1호" class="probe-img">
+                    <p>1977년에 발사되어 목성과 토성을 거쳐 인류 역사상 최초로 태양계를 벗어난 탐사선입니다. 현재 지구에서 가장 멀리 떨어진 공간을 홀로 비행하며 성간 물질 정보를 지구로 송신하고 있습니다.</p>
+                </div>
+                <div class="probe-box">
+                    <p class="probe-title">파커 솔라 프로브</p>
+                    <img src="파커솔라프로브.jpg" alt="파커 솔라 프로브" class="probe-img">
+                    <p>인류 역사상 태양에 가장 가까이 접근한 태양 탐사선입니다. 엄청난 열기와 방사능을 견디며 태양의 대기층인 '코로나' 속을 직접 통과해 비행하며 태양풍의 비밀을 밝혀내기 위한 탐사를 수행 중입니다.</p>
+                </div>
+                <div class="probe-box">
+                    <p class="probe-title">주노</p>
+                    <img src="주노.jpg" alt="주노" class="probe-img">
+                    <p>목성의 기원과 구조를 밝히기 위해 파견된 탐사선입니다. 목성의 두꺼운 구름층을 뚫고 자기장과 중력장을 정밀 측정하고 있으며, 목성의 거대한 위성에 근접 비행하며 탐사를 이어가고 있습니다.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        COPYRIGHT(C) SEOJIN All Rights Reserved
+    </footer>
+
+</body>
+</html>
