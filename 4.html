@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>별 관측 명소 — 뱔빛기행</title>
+    <title>별 관측 명소 — 별빛기행</title>
     <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&family=Nanum+Myeongjo:wght@400;700;800&display=swap" rel="stylesheet">
     <style>
         * {
@@ -17,8 +17,8 @@
         body {
             font-family: "맑은 고딕", "돋음", Verdana, sans-serif;
             font-size: 100%;
-            background-color: #03030A; /* 더 깊고 어두운 우주 */
-            color: #F0EEE8; /* 약간 따뜻한 본문 텍스트 톤 */
+            background-color: #03030A; 
+            color: #F0EEE8; 
         }
         header {
             width: 100%;
@@ -38,24 +38,20 @@
         }
         header h1 {
             font-family: 'Nanum Myeongjo', serif;
-            font-size: 2.8em;
+            font-size: 45px;
             font-weight: 800;
             color: #ffffff;
-            letter-spacing: 0.3em;
             text-shadow: 0 2px 16px rgba(0,0,0,0.8);
         }
         header p {
             margin-top: 10px;
-            font-size: 0.85em;
-            color: #7AB8D4; /* 차가운 하늘색 — 별빛 느낌 강조 */
-            letter-spacing: 0.15em;
+            font-size: 14px;
+            color: #7AB8D4; 
             text-shadow: 0 1px 8px rgba(0,0,0,0.9);
         }
-
-        /* ── 메뉴바 ── */
         nav#navbar {
             background-color: #03030A;
-            border-bottom: 2px solid #1E1A3A; /* 중립적인 구분선 */
+            border-bottom: 2px solid #1E1A3A; 
             text-align: center;
         }
         nav#navbar ul {
@@ -65,10 +61,7 @@
         nav#navbar li {
             display: flex;
             align-items: center;
-        }
-        nav#navbar li:not(:last-child)::after {
-            content: '│';
-            color: #1E1A3A; /* 중립적인 구분선 */
+            color: #1E1A3A; 
         }
         nav#navbar a {
             font-family: 'Nanum Gothic', sans-serif;
@@ -76,63 +69,57 @@
             padding: 15px 22px;
             display: block;
             text-decoration: none;
-            font-size: 0.93em;
-            letter-spacing: 0.05em;
+            font-size: 15px;
             transition: color 0.2s ease;
         }
         nav#navbar a:hover {
-            color: #C8A84B; /* 호버 시 별빛 금색 */
+            color: #C8A84B;
         }
         nav#navbar a.active {
-            color: #C8A84B; /* 활성화 메뉴 포인트 색: 별빛 금색 */
+            color: #C8A84B; 
             font-weight: 700;
         }
-
         .content-wrap {
             max-width: 1200px;
             margin: 0 auto;
             padding: 50px 40px;
         }
-
         .page-intro {
             margin-bottom: 50px;
             padding-bottom: 30px;
-            border-bottom: 1px solid #1E1A3A; /* 중립적인 구분선 */
+            border-bottom: 1px solid #1E1A3A;
         }
         .page-intro h2 {
             font-family: 'Nanum Myeongjo', serif;
-            font-size: 1.8em;
+            font-size: 29px;
             font-weight: 700;
             color: #ffffff;
-            border-left: 4px solid #C8A84B; /* 포인트 색: 별빛 금색 */
+            border-left: 4px solid #C8A84B; 
             padding-left: 16px;
             margin-bottom: 14px;
         }
         .page-intro p {
-            font-size: 0.93em;
+            font-size: 15px;
             line-height: 180%;
             color: #F0EEE8;
             padding-left: 20px;
-            opacity: 0.85;
         }
-
         .section-title {
             font-family: 'Nanum Myeongjo', serif;
-            font-size: 1.3em;
+            font-size: 21px;
             font-weight: 700;
-            color: #7AB8D4; /* 제목 강조색: 차가운 하늘색 */
-            border-bottom: 2px solid #C8A84B; /* 포인트 색: 별빛 금색 */
+            color: #7AB8D4; 
+            border-bottom: 2px solid #C8A84B; 
             padding-bottom: 10px;
             margin-bottom: 24px;
         }
-
         #spots {
             margin-bottom: 60px;
         }
         .spot-card {
             display: grid;
             grid-template-columns: 1fr 220px;
-            background-color: #0D0B1E; /* 덜 보라, 더 어두운 심우주 카드 배경 */
+            background-color: #0D0B1E; 
             border-radius: 8px;
             overflow: hidden;
             margin-bottom: 20px;
@@ -143,9 +130,9 @@
         }
         .spot-card .spot-info .spot-tag {
             display: inline-block;
-            background-color: #C8A84B; /* 포인트 색: 별빛 금색 */
+            background-color: #C8A84B; 
             color: #03030A;
-            font-size: 0.75em;
+            font-size: 12px;
             font-weight: 700;
             padding: 2px 8px;
             border-radius: 3px;
@@ -153,22 +140,21 @@
         }
         .spot-card .spot-info h3 {
             font-family: 'Nanum Myeongjo', serif;
-            font-size: 1.3em;
+            font-size: 21px;
             font-weight: 700;
             color: #ffffff;
             margin-bottom: 6px;
         }
         .spot-card .spot-info .spot-addr {
-            font-size: 0.8em;
-            color: #7AB8D4; /* 기온/주소 강조색: 차가운 하늘색 */
+            font-size: 13px;
+            color: #7AB8D4; 
             margin-bottom: 12px;
             font-weight: 700;
         }
         .spot-card .spot-info p {
-            font-size: 0.88em;
+            font-size: 14px;
             line-height: 175%;
             color: #F0EEE8;
-            opacity: 0.85;
         }
         .spot-card img {
             width: 220px;
@@ -176,7 +162,6 @@
             object-fit: cover;
             display: block;
         }
-        
         #guide {
             margin-bottom: 40px;
         }
@@ -186,50 +171,46 @@
             gap: 20px;
         }
         .guide-box {
-            background-color: #0D0B1E; /* 덜 보라, 더 어두운 심우주 카드 배경 */
+            background-color: #0D0B1E; 
             border-radius: 8px;
             padding: 22px 20px;
             border: 1px solid #1E1A3A;
         }
         .guide-box h4 {
             font-family: 'Nanum Myeongjo', serif;
-            font-size: 1em;
+            font-size: 16px;
             font-weight: 700;
-            color: #C8A84B; /* 강조 소제목 색: 별빛 금색 */
+            color: #C8A84B; 
             margin-bottom: 14px;
         }
         .guide-box ul {
             list-style: none;
         }
         .guide-box ul li {
-            font-size: 0.85em;
+            font-size: 14px;
             color: #F0EEE8;
             line-height: 155%;
             margin-bottom: 10px;
             padding-left: 12px;
-            border-left: 2px solid #1E1A3A; /* 중립적인 구분선 */
-            opacity: 0.9;
+            border-left: 2px solid #1E1A3A; 
         }
         .guide-box ul li strong {
-            color: #7AB8D4; /* 가이드 내부 강조구문 색: 차가운 하늘색 */
+            color: #7AB8D4; 
         }
-
         footer {
             background-color: #03030A;
             text-align: center;
             padding: 30px 20px;
             margin-top: 20px;
-            font-size: 0.8em;
+            font-size: 13px;
             color: #666677;
-            border-top: 1px solid #1E1A3A; /* 중립적인 구분선 */
-            letter-spacing: 0.05em;
+            border-top: 1px solid #1E1A3A; 
         }
         @media only screen and (max-width: 768px) {
             .spot-card { grid-template-columns: 1fr; }
             .spot-card img { width: 100%; height: 180px; }
             .guide-grid { grid-template-columns: 1fr; }
             nav#navbar ul { flex-wrap: wrap; justify-content: center; }
-            nav#navbar li:not(:last-child)::after { display: none; }
         }
     </style>
 </head>
@@ -240,10 +221,10 @@
     </header>
     <nav id="navbar">
         <ul>
-            <li><a href="1.html">별자리도감</a></li>
-            <li><a href="2.html">태양계</a></li>
-            <li><a href="3.html">천문현상</a></li>
-            <li><a href="4.html" class="active">별 관측 명소</a></li>
+            <li><a href="1.html">별자리도감</a></li>│
+            <li><a href="2.html">태양계</a></li>│
+            <li><a href="3.html">천문현상</a></li>│
+            <li><a href="4.html" class="active">별 관측 명소</a></li>│
             <li><a href="5.html">우주 작품 추천</a></li>
         </ul>
     </nav>

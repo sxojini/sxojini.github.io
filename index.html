@@ -17,10 +17,9 @@
         body {
             font-family: "맑은 고딕", "돋음", Verdana, sans-serif;
             font-size: 100%;
-            background-color: #03030A; /* 더 깊고 어두운 우주 배경 */
-            color: #F0EEE8; /* 순백 대신 약간 따뜻한 톤 */
+            background-color: #03030A; 
+            color: #F0EEE8; 
         }
-
         header {
             width: 100%;
             height: 50vh;
@@ -36,28 +35,25 @@
         }
         header h1 {
             font-family: 'Nanum Myeongjo', '궁서체', serif;
-            font-size: 4.5em;
+            font-size: 72px;
             font-weight: 800;
             color: #ffffff;
-            letter-spacing: 0.4em;
             line-height: 1.2;
             text-shadow: 0 2px 16px rgba(0,0,0,0.7);
         }
         header h1 .point {
-            color: #C8A84B; /* 별빛 금색 포인트 */
+            color: #C8A84B; 
         }
         header p {
             margin-top: 14px;
             font-family: 'Nanum Gothic', sans-serif;
-            font-size: 0.9em;
-            color: #7AB8D4; /* 차가운 하늘색으로 변경 (강조) */
-            letter-spacing: 0.2em;
+            font-size: 14px;
+            color: #7AB8D4; 
             text-shadow: 0 1px 8px rgba(0,0,0,0.8);
         }
-
         nav#navbar {
             background-color: #03030A;
-            border-bottom: 2px solid #1E1A3A; /* 중립적인 구분선 */
+            border-bottom: 2px solid #1E1A3A; 
             text-align: center;
             padding: 0;
         }
@@ -68,10 +64,7 @@
         nav#navbar li {
             display: flex;
             align-items: center;
-        }
-        nav#navbar li:not(:last-child)::after {
-            content: '│';
-            color: #1E1A3A; /* 중립적인 구분선 */
+            color: #1E1A3A;
         }
         nav#navbar a {
             font-family: 'Nanum Gothic', sans-serif;
@@ -79,49 +72,42 @@
             padding: 15px 22px;
             display: block;
             text-decoration: none;
-            font-size: 0.93em;
-            letter-spacing: 0.05em;
-            transition: color 0.2s ease;
+            font-size: 15px;
         }
         nav#navbar a:hover {
-            color: #C8A84B; /* 마우스 호버 시 별빛 금색 */
+            color: #C8A84B; 
         }
-
         .content-wrap {
             max-width: 1200px;
             margin: 0 auto;
             padding: 60px 40px;
         }
-
         .section-title {
             font-family: 'Nanum Myeongjo', serif;
-            font-size: 1.6em;
+            font-size: 26px;
             font-weight: 700;
-            color: #7AB8D4; /* 제목 강조색: 차가운 하늘색 */
-            border-bottom: 2px solid #C8A84B; /* 포인트 구분선: 별빛 금색 */
+            color: #7AB8D4; 
+            border-bottom: 2px solid #C8A84B; 
             padding-bottom: 10px;
             margin-bottom: 20px;
         }
-
         .intro {
             margin-bottom: 60px;
             text-align: center;
         }
         .intro h2 {
             font-family: 'Nanum Myeongjo', serif;
-            font-size: 1.5em;
+            font-size: 24px;
             color: #ffffff;
             margin-bottom: 14px;
         }
         .intro p {
-            font-size: 0.95em;
+            font-size: 15px;
             line-height: 180%;
             color: #F0EEE8;
             max-width: 700px;
             margin: 0 auto;
-            opacity: 0.85;
         }
-
         #events {
             margin-bottom: 70px;
         }
@@ -131,40 +117,40 @@
             margin-top: 10px;
         }
         #events thead th {
-            background-color: #0D0B1E; /* 어두운 심우주 카드 배경 */
+            background-color: #0D0B1E; 
             padding: 12px 14px;
             text-align: left;
             color: #ffffff;
-            font-size: 0.88em;
-            letter-spacing: 0.05em;
+            font-size: 14px;
             border-bottom: 2px solid #C8A84B;
         }
         #events tbody tr {
-            border-bottom: 1px solid #1E1A3A; /* 중립적인 구분선 */
+            border-bottom: 1px solid #1E1A3A; 
         }
         #events tbody td {
             padding: 14px 14px;
-            font-size: 0.9em;
+            font-size: 14px;
             vertical-align: middle;
             line-height: 160%;
         }
         #events .td-date {
-            color: #7AB8D4; /* 기온/날짜 강조색: 차가운 하늘색 */
+            color: #7AB8D4; 
             white-space: nowrap;
             width: 130px;
             font-weight: 700;
         }
         #events .td-type {
-            width: 80px;
+            width: 100px;
         }
         #events .td-type span {
             display: inline-block;
-            background-color: #C8A84B; /* 포인트 색: 별빛 금색 */
-            color: #03030A; /* 배경이 밝으므로 텍스트는 어둡게 조절하여 가독성 확보 */
-            font-size: 0.8em;
+            background-color: #C8A84B; 
+            color: #03030A; 
+            font-size: 13px;
             font-weight: 700;
-            padding: 2px 8px;
+            padding: 4px 10px;
             border-radius: 3px;
+            white-space: nowrap;
         }
         #events .td-name {
             font-weight: 700;
@@ -175,25 +161,31 @@
             color: #F0EEE8;
             opacity: 0.9;
         }
-
+        
         #gallery {
             margin-bottom: 70px;
         }
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 14px;
+        .gallery-table {
+            width: 100%;
+            table-layout: fixed; 
+            border-collapse: collapse;
             margin-top: 10px;
         }
-        .gallery-grid img {
+        .gallery-table td {
+            width: 25%; 
+            padding: 0 7px; 
+            text-align: center;
+            vertical-align: top;
+        }
+        .gallery-table img {
             width: 100%;
             height: 200px;
             object-fit: cover;
             border-radius: 5px;
             display: block;
         }
-        .gallery-grid p {
-            font-size: 0.8em;
+        .gallery-table p {
+            font-size: 13px;
             color: #7AB8D4; 
             text-align: center;
             margin-top: 6px;
@@ -203,13 +195,15 @@
             margin-bottom: 70px;
         }
         .my-gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
             margin-top: 10px;
         }
         .my-photo-item {
-            background-color: #0D0B1E; /* 어두운 심우주 카드 배경 */
+            width: 32%;
+            margin-bottom: 20px;
+            background-color: #0D0B1E; 
             border-radius: 6px;
             overflow: hidden;
             border: 1px solid #1E1A3A;
@@ -224,34 +218,35 @@
             padding: 12px 14px;
         }
         .my-photo-item .photo-info .photo-date {
-            font-size: 0.78em;
+            font-size: 12px;
             color: #C8A84B; 
             margin-bottom: 4px;
             font-weight: 700;
         }
         .my-photo-item .photo-info .photo-place {
-            font-size: 0.88em;
+            font-size: 14px;
             font-weight: 700;
             color: #ffffff;
             margin-bottom: 4px;
         }
         .my-photo-item .photo-info .photo-desc {
-            font-size: 0.8em;
+            font-size: 13px;
             color: #F0EEE8;
             line-height: 150%;
-            opacity: 0.8;
         }
 
         #quicklinks {
             margin-bottom: 70px;
         }
         .card-grid {
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            gap: 14px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
             margin-top: 10px;
         }
         .card {
+            width: 19%;
+            margin-bottom: 14px;
             background-color: #0D0B1E; 
             border-radius: 6px;
             padding: 20px 16px;
@@ -260,12 +255,11 @@
             display: block;
             border: 1px solid #1E1A3A;
         }
-    
         .card .card-tag {
             display: inline-block;
             background-color: #C8A84B; 
             color: #03030A;
-            font-size: 0.72em;
+            font-size: 12px;
             font-weight: 700;
             padding: 2px 7px;
             border-radius: 3px;
@@ -273,13 +267,13 @@
         }
         .card h3 {
             font-family: 'Nanum Myeongjo', serif;
-            font-size: 1em;
+            font-size: 16px;
             font-weight: 700;
             color: #ffffff;
             margin-bottom: 8px;
         }
         .card p {
-            font-size: 0.78em;
+            font-size: 12px;
             color: #F0EEE8;
             line-height: 160%;
             opacity: 0.8;
@@ -289,37 +283,38 @@
             margin-bottom: 40px;
         }
         .about-inner {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
+            display: flex;
+            justify-content: space-between;
             align-items: center;
             margin-top: 10px;
         }
         .about-inner img {
-            width: 100%;
+            width: 48%;
             height: 300px;
             object-fit: cover;
             border-radius: 6px;
             display: block;
         }
+        .about-text {
+            width: 48%;
+        }
         .about-text h3 {
             font-family: 'Nanum Myeongjo', serif;
-            font-size: 1.3em;
+            font-size: 21px;
             font-weight: 700;
             color: #ffffff;
             margin-bottom: 16px;
         }
         .about-text p {
-            font-size: 0.9em;
+            font-size: 14px;
             line-height: 180%;
             color: #F0EEE8;
             margin-bottom: 12px;
         }
         .about-text .about-name {
-            font-size: 0.85em;
+            font-size: 14px;
             color: #C8A84B; 
             font-weight: 700;
-            
         }
 
         footer {
@@ -327,20 +322,29 @@
             text-align: center;
             padding: 30px 20px;
             margin-top: 20px;
-            font-size: 0.8em;
+            font-size: 13px;
             color: #666677;
             border-top: 1px solid #1E1A3A; 
-    
         }
 
         @media only screen and (max-width: 768px) {
-            header h1 { font-size: 3em; }
+            header h1 { font-size: 48px; }
             nav#navbar ul { flex-wrap: wrap; justify-content: center; }
-            nav#navbar li:not(:last-child)::after { display: none; }
-            .gallery-grid { grid-template-columns: repeat(2, 1fr); }
-            .my-gallery-grid { grid-template-columns: repeat(2, 1fr); }
-            .card-grid { grid-template-columns: repeat(2, 1fr); }
-            .about-inner { grid-template-columns: 1fr; }
+            
+            .gallery-table tr, .gallery-table td { 
+                display: block; 
+                width: 100% !important; 
+                margin-bottom: 14px;
+                padding: 0;
+            }
+            
+            .my-gallery-grid .my-photo-item { width: 48%; }
+            .card-grid .card { width: 48%; }
+            
+            .about-inner { flex-direction: column; }
+            .about-inner img { width: 100%; margin-bottom: 20px; }
+            .about-text { width: 100%; }
+            
             #events .td-desc { display: none; }
         }
     </style>
@@ -354,10 +358,10 @@
 
     <nav id="navbar">
         <ul>
-            <li><a href="1.html">별자리도감</a></li>
-            <li><a href="2.html">태양계</a></li>
-            <li><a href="3.html">천문현상</a></li>
-            <li><a href="4.html">별 관측 명소</a></li>
+            <li><a href="1.html">별자리도감</a></li>│
+            <li><a href="2.html">태양계</a></li>│
+            <li><a href="3.html">천문현상</a></li>│
+            <li><a href="4.html">별 관측 명소</a></li>│
             <li><a href="5.html">우주 작품 추천</a></li>
         </ul>
     </nav>
@@ -382,34 +386,34 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td class="td-date">2026.06.12</td>
+                        <td class="td-date">2026.01.04</td>
                         <td class="td-type"><span>유성우</span></td>
-                        <td class="td-name">페르세우스자리 유성우</td>
-                        <td class="td-desc">자정 이후 북동쪽 하늘, 시간당 최대 100개 관측 가능.</td>
+                        <td class="td-name">사분의자리 유성우 극대</td>
+                        <td class="td-desc">새벽 시간대 관측 최적기. 달빛의 방해가 없어 시간당 최대 120개의 유성을 맨눈으로 관측 가능.</td>
                     </tr>
                     <tr>
-                        <td class="td-date">2026.07.05</td>
-                        <td class="td-type"><span>월식</span></td>
-                        <td class="td-name">개기월식 (블러드문)</td>
-                        <td class="td-desc">새벽 1시~4시, 달이 붉게 변하는 장관. 전국 맨눈 관측 가능.</td>
+                        <td class="td-date">2026.08.13</td>
+                        <td class="td-type"><span>유성우</span></td>
+                        <td class="td-name">페르세우스자리 유성우 극대</td>
+                        <td class="td-desc">여름철 최고의 우주 쇼. 밤 11시 이후 달이 진 뒤부터 새벽까지 시간당 100개 안팎의 선명한 불꽃 관측.</td>
                     </tr>
                     <tr>
-                        <td class="td-date">2026.08.03</td>
+                        <td class="td-date">2026.09.22</td>
                         <td class="td-type"><span>행성</span></td>
-                        <td class="td-name">토성 충 — 최대 근접</td>
-                        <td class="td-desc">소형 망원경으로 고리를 선명하게 볼 수 있는 최적기.</td>
+                        <td class="td-name">토성충</td>
+                        <td class="td-desc">태양-지구-토성이 일직선상에 위치해 역대 가장 밝아지는 날. 소형 망원경으로 토성의 고리를 선명히 볼 기회.</td>
                     </tr>
                     <tr>
-                        <td class="td-date">2026.09.17</td>
+                        <td class="td-date">2026.11.18</td>
                         <td class="td-type"><span>유성우</span></td>
-                        <td class="td-name">쌍둥이자리 유성우</td>
-                        <td class="td-desc">시간당 최대 120개, 느리고 밝은 유성으로 초보자도 관측 쉬움.</td>
+                        <td class="td-name">사자자리 유성우 극대</td>
+                        <td class="td-desc">새벽 3시 전후를 기점으로 달빛이 없는 어두운 교외 지역에서 밝고 빠른 유성 관측 가능.</td>
                     </tr>
                     <tr>
-                        <td class="td-date">2026.10.28</td>
-                        <td class="td-type"><span>오로라</span></td>
-                        <td class="td-name">오로라 가시 가능 예보</td>
-                        <td class="td-desc">태양 활동 극대기. 북부 고지대에서 관측 가능성 높음.</td>
+                        <td class="td-date">2026.12.14</td>
+                        <td class="td-type"><span>유성우</span></td>
+                        <td class="td-name">쌍둥이자리 유성우 극대</td>
+                        <td class="td-desc">겨울철 대표 유성우. 밤 9시부터 새벽까지 하늘 전역에서 떨어지며, 초보자도 쉽게 찾을 수 있는 풍성한 별비.</td>
                     </tr>
                 </tbody>
             </table>
@@ -417,24 +421,26 @@
 
         <div id="gallery">
             <h2 class="section-title">포토 갤러리</h2>
-            <div class="gallery-grid">
-                <div>
-                    <img src="은하수.jpg" alt="은하수">
-                    <p>은하수</p>
-                </div>
-                <div>
-                    <img src="유성우.jpg" alt="유성우">
-                    <p>유성우</p>
-                </div>
-                <div>
-                    <img src="일식.jpg" alt="일식">
-                    <p>일식</p>
-                </div>
-                <div>
-                    <img src="달.png" alt="달">
-                    <p>보름달</p>
-                </div>
-            </div>
+            <table class="gallery-table">
+                <tr>
+                    <td>
+                        <img src="은하수.jpg" alt="은하수">
+                        <p>은하수</p>
+                    </td>
+                    <td>
+                        <img src="유성우.jpg" alt="유성우">
+                        <p>유성우</p>
+                    </td>
+                    <td>
+                        <img src="일식.jpg" alt="일식">
+                        <p>일식</p>
+                    </td>
+                    <td>
+                        <img src="달.png" alt="달">
+                        <p>보름달</p>
+                    </td>
+                </tr>
+            </table>
         </div>
 
         <div id="my-gallery">
@@ -501,8 +507,8 @@
                 <img src="내별사진3.jpg" alt="직접 찍은 별사진">
                 <div class="about-text">
                     <h3>안녕하세요, 서진입니다.</h3>
-                    <p>어릴 때부터 밤하늘을 올려다보는 걸 좋아했습니다. 도시의 불빛 사이로도 가끔 보이는 별 하나에 마음이 설레곤 했어요.</p>
-                    <p>달빛기행은 그 설렘을 기록하고 나누기 위해 만들었습니다. 별자리 이야기부터 직접 발로 찾아간 관측 명소, 그리고 제 손으로 담은 밤하늘 사진까지 — 밤하늘에 관한 모든 것을 조용히 모아두는 공간입니다.</p>
+                    <p>어릴 때부터 밤하늘을 보는 것을 좋아했습니다.</p>
+                    <p>별빛기행은 그 설렘을 기록하고 저장하기위해 만들었습니다. 별자리 이야기부터 직접 발로 찾아간 관측 명소, 그리고 제 손으로 찍은 밤하늘 사진까지 — 우주에 관한 모든 것을 모아두는 공간입니다.</p>
                     <p class="about-name">SEOJIN · 별빛기행</p>
                 </div>
             </div>

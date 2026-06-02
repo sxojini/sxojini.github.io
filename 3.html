@@ -17,8 +17,8 @@
         body {
             font-family: "맑은 고딕", "돋음", Verdana, sans-serif;
             font-size: 100%;
-            background-color: #03030A; /* 더 깊고 어두운 우주 배경 */
-            color: #F0EEE8; /* 약간 따뜻한 본문 텍스트 톤 */
+            background-color: #03030A; 
+            color: #F0EEE8; 
         }
         header {
             width: 100%;
@@ -38,24 +38,20 @@
         }
         header h1 {
             font-family: 'Nanum Myeongjo', serif;
-            font-size: 2.8em;
+            font-size: 45px;
             font-weight: 800;
             color: #ffffff;
-            letter-spacing: 0.3em;
             text-shadow: 0 2px 16px rgba(0,0,0,0.8);
         }
         header p {
             margin-top: 10px;
-            font-size: 0.85em;
-            color: #7AB8D4; /* 차가운 하늘색 — 별빛 느낌 강조 */
-            letter-spacing: 0.15em;
+            font-size: 14px;
+            color: #7AB8D4; 
             text-shadow: 0 1px 8px rgba(0,0,0,0.9);
         }
-
-        /* ── 메뉴바 ── */
         nav#navbar {
             background-color: #03030A;
-            border-bottom: 2px solid #1E1A3A; /* 중립적인 구분선 */
+            border-bottom: 2px solid #1E1A3A; 
             text-align: center;
         }
         nav#navbar ul {
@@ -65,10 +61,7 @@
         nav#navbar li {
             display: flex;
             align-items: center;
-        }
-        nav#navbar li:not(:last-child)::after {
-            content: '│';
-            color: #1E1A3A; /* 중립적인 구분선 */
+            color: #1E1A3A;
         }
         nav#navbar a {
             font-family: 'Nanum Gothic', sans-serif;
@@ -76,60 +69,49 @@
             padding: 15px 22px;
             display: block;
             text-decoration: none;
-            font-size: 0.93em;
-            letter-spacing: 0.05em;
-            transition: color 0.2s ease;
+            font-size: 15px;
         }
         nav#navbar a:hover {
-            color: #C8A84B; /* 호버 시 별빛 금색 */
+            color: #C8A84B; 
         }
         nav#navbar a.active {
-            color: #C8A84B; /* 활성화 메뉴 포인트 색: 별빛 금색 */
+            color: #C8A84B; 
             font-weight: 700;
         }
-
-        /* ── 본문 래퍼 ── */
         .content-wrap {
             max-width: 1200px;
             margin: 0 auto;
             padding: 50px 40px;
         }
-
-        /* ── 페이지 인트로 ── */
         .page-intro {
             margin-bottom: 50px;
             padding-bottom: 30px;
-            border-bottom: 1px solid #1E1A3A; /* 중립적인 구분선 */
+            border-bottom: 1px solid #1E1A3A;
         }
         .page-intro h2 {
             font-family: 'Nanum Myeongjo', serif;
-            font-size: 1.8em;
+            font-size: 29px;
             font-weight: 700;
             color: #ffffff;
-            border-left: 4px solid #C8A84B; /* 포인트 색: 별빛 금색 */
+            border-left: 4px solid #C8A84B;
             padding-left: 16px;
             margin-bottom: 14px;
         }
         .page-intro p {
-            font-size: 0.93em;
+            font-size: 15px;
             line-height: 180%;
             color: #F0EEE8;
             padding-left: 20px;
-            opacity: 0.85;
         }
-
-        /* ── 섹션 타이틀 ── */
         .section-title {
             font-family: 'Nanum Myeongjo', serif;
-            font-size: 1.3em;
+            font-size: 21px;
             font-weight: 700;
-            color: #7AB8D4; /* 제목 강조색: 차가운 하늘색 */
-            border-bottom: 2px solid #C8A84B; /* 포인트 색: 별빛 금색 */
+            color: #7AB8D4;
+            border-bottom: 2px solid #C8A84B; 
             padding-bottom: 10px;
             margin-bottom: 24px;
         }
-
-        /* ── 천문현상 카드 ── */
         #phenomena {
             margin-bottom: 60px;
         }
@@ -137,7 +119,7 @@
             display: grid;
             grid-template-columns: 1fr 220px;
             gap: 0;
-            background-color: #0D0B1E; /* 덜 보라, 더 어두운 심우주 카드 배경 */
+            background-color: #0D0B1E; 
             border-radius: 8px;
             overflow: hidden;
             margin-bottom: 20px;
@@ -148,9 +130,9 @@
         }
         .phenomenon-card .phen-info .phen-tag {
             display: inline-block;
-            background-color: #C8A84B; /* 포인트 색: 별빛 금색 */
+            background-color: #C8A84B; 
             color: #03030A;
-            font-size: 0.75em;
+            font-size: 12px;
             font-weight: 700;
             padding: 2px 8px;
             border-radius: 3px;
@@ -158,16 +140,15 @@
         }
         .phenomenon-card .phen-info h3 {
             font-family: 'Nanum Myeongjo', serif;
-            font-size: 1.3em;
+            font-size: 21px;
             font-weight: 700;
             color: #ffffff;
             margin-bottom: 12px;
         }
         .phenomenon-card .phen-info p {
-            font-size: 0.88em;
+            font-size: 14px;
             line-height: 175%;
             color: #F0EEE8;
-            opacity: 0.85;
         }
         .phenomenon-card img {
             width: 220px;
@@ -175,8 +156,6 @@
             object-fit: cover;
             display: block;
         }
-
-        /* ── 갤러리 ── */
         #gallery {
             margin-bottom: 40px;
         }
@@ -186,7 +165,7 @@
             gap: 16px;
         }
         .gallery-item {
-            background-color: #0D0B1E; /* 덜 보라, 더 어두운 심우주 카드 배경 */
+            background-color: #0D0B1E; 
             border-radius: 8px;
             overflow: hidden;
             border: 1px solid #1E1A3A;
@@ -198,32 +177,25 @@
             display: block;
         }
         .gallery-item p {
-            font-size: 0.85em;
+            font-size: 14px;
             color: #F0EEE8;
             text-align: center;
             padding: 10px 0;
-            opacity: 0.9;
         }
-
-        /* ── 푸터 ── */
         footer {
             background-color: #03030A;
             text-align: center;
             padding: 30px 20px;
             margin-top: 20px;
-            font-size: 0.8em;
+            font-size: 13px;
             color: #666677;
-            border-top: 1px solid #1E1A3A; /* 중립적인 구분선 */
-            letter-spacing: 0.05em;
+            border-top: 1px solid #1E1A3A;
         }
-
-        /* ── 반응형 ── */
         @media only screen and (max-width: 768px) {
             .phenomenon-card { grid-template-columns: 1fr; }
             .phenomenon-card img { width: 100%; height: 180px; }
             .gallery-grid { grid-template-columns: 1fr; }
             nav#navbar ul { flex-wrap: wrap; justify-content: center; }
-            nav#navbar li:not(:last-child)::after { display: none; }
         }
     </style>
 </head>
@@ -235,10 +207,10 @@
     </header>
     <nav id="navbar">
         <ul>
-            <li><a href="1.html">별자리도감</a></li>
-            <li><a href="2.html">태양계</a></li>
-            <li><a href="3.html" class="active">천문현상</a></li>
-            <li><a href="4.html">별 관측 명소</a></li>
+            <li><a href="1.html">별자리도감</a></li>│
+            <li><a href="2.html">태양계</a></li>│
+            <li><a href="3.html" class="active">천문현상</a></li>│
+            <li><a href="4.html">별 관측 명소</a></li>│
             <li><a href="5.html">우주 작품 추천</a></li>
         </ul>
     </nav>
@@ -246,7 +218,7 @@
     <div class="content-wrap">
         <div class="page-intro">
             <h2>천문현상</h2>
-            <p>우주 공간에서 천체들이 움직이며 만들어내는 현상들은 오랫동안 인류에게 경외심을 심어주었습니다. 지구의 자전과 공전, 그리고 달과 행성들의 규칙적인 궤도 운동이 결합하여 매년 역동적인 우주 쇼를 연출합니다.<br>
+            <p>우주 공간에서 천체들이 움직이며 만들어내는 현상들은 오랫동안 인류에게 경외심을 심어주었습니다. 지구의 자전 och 공전, 그리고 달과 행성들의 규칙적인 궤도 운동이 결합하여 매년 역동적인 우주 쇼를 연출합니다.<br>
             현대 천문학의 발전으로 이러한 현상들이 일어나는 정확한 시기와 원리를 예측할 수 있게 되었으며, 전 세계 수많은 이들이 이를 관측하기 위해 여행을 떠나기도 합니다.</p>
         </div>
 

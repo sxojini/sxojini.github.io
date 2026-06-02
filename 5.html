@@ -33,22 +33,20 @@
             justify-content: center;
             text-align: center;
         }
-         header a {
+        header a {
             text-decoration: none;
         }
         header h1 {
             font-family: 'Nanum Myeongjo', serif;
-            font-size: 2.8em;
+            font-size: 45px;
             font-weight: 800;
             color: #ffffff;
-            letter-spacing: 0.3em;
             text-shadow: 0 2px 16px rgba(0,0,0,0.8);
         }
         header p {
             margin-top: 10px;
-            font-size: 0.85em;
+            font-size: 14px;
             color: #7AB8D4; 
-            letter-spacing: 0.15em;
             text-shadow: 0 1px 8px rgba(0,0,0,0.9);
         }
         nav#navbar {
@@ -63,10 +61,7 @@
         nav#navbar li {
             display: flex;
             align-items: center;
-        }
-        nav#navbar li:not(:last-child)::after {
-            content: '│';
-            color: #1E1A3A; 
+            color: #1E1A3A;
         }
         nav#navbar a {
             font-family: 'Nanum Gothic', sans-serif;
@@ -74,8 +69,7 @@
             padding: 15px 22px;
             display: block;
             text-decoration: none;
-            font-size: 0.93em;
-            letter-spacing: 0.05em;
+            font-size: 15px;
             transition: color 0.2s ease;
         }
         nav#navbar a:hover {
@@ -97,7 +91,7 @@
         }
         .page-intro h2 {
             font-family: 'Nanum Myeongjo', serif;
-            font-size: 1.8em;
+            font-size: 29px;
             font-weight: 700;
             color: #ffffff;
             border-left: 4px solid #C8A84B;
@@ -105,15 +99,14 @@
             margin-bottom: 14px;
         }
         .page-intro p {
-            font-size: 0.93em;
+            font-size: 15px;
             line-height: 180%;
             color: #F0EEE8;
             padding-left: 20px;
-            opacity: 0.85;
         }
         .section-title {
             font-family: 'Nanum Myeongjo', serif;
-            font-size: 1.3em;
+            font-size: 21px;
             font-weight: 700;
             color: #7AB8D4; 
             border-bottom: 2px solid #C8A84B; 
@@ -138,7 +131,7 @@
         .work-card .work-info .work-tag {
             display: inline-block;
             background-color: #C8A84B; 
-            font-size: 0.75em;
+            font-size: 12px;
             font-weight: 700;
             padding: 2px 8px;
             border-radius: 3px;
@@ -146,22 +139,21 @@
         }
         .work-card .work-info h3 {
             font-family: 'Nanum Myeongjo', serif;
-            font-size: 1.3em;
+            font-size: 21px;
             font-weight: 700;
             color: #ffffff;
             margin-bottom: 6px;
         }
         .work-card .work-info .work-sub {
-            font-size: 0.8em;
+            font-size: 13px;
             color: #7AB8D4; 
             margin-bottom: 12px;
             font-weight: 700;
         }
         .work-card .work-info p {
-            font-size: 0.88em;
+            font-size: 14px;
             line-height: 175%;
             color: #F0EEE8;
-            opacity: 0.85;
         }
         .work-card img {
             width: 220px;
@@ -169,7 +161,6 @@
             object-fit: cover;
             display: block;
         }
-
         #probes {
             margin-bottom: 40px;
         }
@@ -187,7 +178,7 @@
             border: 1px solid #1E1A3A;
         }
         .probe-box .probe-title {
-            font-size: 0.95em;
+            font-size: 15px;
             font-weight: 700;
             color: #C8A84B; 
             margin-bottom: 14px;
@@ -196,7 +187,7 @@
             gap: 8px;
         }
         .probe-box .probe-title .status-badge {
-            font-size: 0.75em;
+            font-size: 12px;
             background-color: #7AB8D4; 
             color: #03030A;
             padding: 1px 6px;
@@ -213,29 +204,24 @@
             border: 1px solid #1E1A3A;
         }
         .probe-box p {
-            font-size: 0.85em;
+            font-size: 14px;
             color: #F0EEE8;
             line-height: 155%;
-            opacity: 0.85;
         }
-
         footer {
             background-color: #03030A;
             text-align: center;
             padding: 30px 20px;
             margin-top: 20px;
-            font-size: 0.8em;
+            font-size: 13px;
             color: #666677;
             border-top: 1px solid #1E1A3A; 
-            letter-spacing: 0.05em;
         }
-
         @media only screen and (max-width: 768px) {
             .work-card { grid-template-columns: 1fr; }
             .work-card img { width: 100%; height: 180px; }
             .probe-grid { grid-template-columns: 1fr; }
             nav#navbar ul { flex-wrap: wrap; justify-content: center; }
-            nav#navbar li:not(:last-child)::after { display: none; }
         }
     </style>
 </head>
@@ -243,14 +229,14 @@
 
     <header>
         <h1>우주 작품 추천</h1>
-        <a href="index.html"><p>별빛기행 · 홈으로 돌아가가</p></a>
+        <a href="index.html"><p>별빛기행 · 홈으로 돌아가기</p></a>
     </header>
     <nav id="navbar">
         <ul>
-            <li><a href="1.html">별자리도감</a></li>
-            <li><a href="2.html">태양계</a></li>
-            <li><a href="3.html">천문현상</a></li>
-            <li><a href="4.html">별 관측 명소</a></li>
+            <li><a href="1.html">별자리도감</a></li>│
+            <li><a href="2.html">태양계</a></li>│
+            <li><a href="3.html">천문현상</a></li>│
+            <li><a href="4.html">별 관측 명소</a></li>│
             <li><a href="5.html" class="active">우주 작품 추천</a></li>
         </ul>
     </nav>
@@ -279,7 +265,7 @@
                     <span class="work-tag">SF 영화</span>
                     <h3>인터스텔라</h3>
                     <p class="work-sub">감독 · 크리스토퍼 놀란 (Christopher Nolan)</p>
-                    <p>식량 부족과 기후 변화로 황폐해진 지구를 대체할 새로운 행성을 찾기 위해 웜홀을 통과하는 우주 비행사들의 탐험을 그린 영화입니다. 블랙홀과 상대성 이론, 차원을 넘나드는 압도적인 시각 효과와 가족을 향한 사랑의 가치를 웅장하게 그려낸 걸작입니다.</p>
+                    <p>식량 부족과 기후 변화로 황폐해진 지구를 대체할 새로운 행성을 찾기 위해 웜홀을 통과하는 우주 비행사들의 탐험을 그린 영화입니다. 블랙홀 and 상대성 이론, 차원을 넘나드는 압도적인 시각 효과와 가족을 향한 사랑의 가치를 웅장하게 그려낸 걸작입니다.</p>
                 </div>
                 <img src="인터스텔라.png" alt="인터스텔라">
             </div>
@@ -306,7 +292,6 @@
 
         </div>
 
-        <!-- 탐사선 근황 -->
         <div id="probes">
             <h3 class="section-title">우주 탐사선 근황</h3>
             <div class="probe-grid">

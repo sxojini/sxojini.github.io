@@ -38,17 +38,15 @@
         }
         header h1 {
             font-family: 'Nanum Myeongjo', serif;
-            font-size: 2.8em;
+            font-size: 45px;
             font-weight: 800;
             color: #ffffff;
-            letter-spacing: 0.3em;
             text-shadow: 0 2px 16px rgba(0,0,0,0.8);
         }
         header p {
             margin-top: 10px;
-            font-size: 0.85em;
+            font-size: 14px;
             color: #7AB8D4; 
-            letter-spacing: 0.15em;
             text-shadow: 0 1px 8px rgba(0,0,0,0.9);
         }
         nav#navbar {
@@ -63,10 +61,7 @@
         nav#navbar li {
             display: flex;
             align-items: center;
-        }
-        nav#navbar li:not(:last-child)::after {
-            content: '│';
-            color: #1E1A3A; 
+            color: #1E1A3A;
         }
         nav#navbar a {
             font-family: 'Nanum Gothic', sans-serif;
@@ -74,9 +69,7 @@
             padding: 15px 22px;
             display: block;
             text-decoration: none;
-            font-size: 0.93em;
-            letter-spacing: 0.05em;
-            transition: color 0.2s ease;
+            font-size: 15px;
         }
         nav#navbar a:hover {
             color: #C8A84B; 
@@ -85,13 +78,11 @@
             color: #C8A84B; 
             font-weight: 700;
         }
-
         .content-wrap {
             max-width: 1200px;
             margin: 0 auto;
             padding: 50px 40px;
         }
-
         .page-intro {
             margin-bottom: 50px;
             padding-bottom: 30px;
@@ -99,7 +90,7 @@
         }
         .page-intro h2 {
             font-family: 'Nanum Myeongjo', serif;
-            font-size: 1.8em;
+            font-size: 29px;
             font-weight: 700;
             color: #ffffff;
             border-left: 4px solid #C8A84B;
@@ -107,23 +98,21 @@
             margin-bottom: 14px;
         }
         .page-intro p {
-            font-size: 0.93em;
+            font-size: 15px;
             line-height: 180%;
             color: #F0EEE8;
             padding-left: 20px;
             opacity: 0.85;
         }
-
         .section-title {
             font-family: 'Nanum Myeongjo', serif;
-            font-size: 1.3em;
+            font-size: 21px;
             font-weight: 700;
             color: #7AB8D4; 
             border-bottom: 2px solid #C8A84B; 
             padding-bottom: 10px;
             margin-bottom: 24px;
         }
-
         #constellations {
             margin-bottom: 60px;
         }
@@ -153,7 +142,7 @@
             display: inline-block;
             background-color: #C8A84B; 
             color: #03030A;
-            font-size: 0.75em;
+            font-size: 12px;
             font-weight: 700;
             padding: 2px 8px;
             border-radius: 3px;
@@ -161,18 +150,16 @@
         }
         .con-card .con-info h3 {
             font-family: 'Nanum Myeongjo', serif;
-            font-size: 1.2em;
+            font-size: 19px;
             font-weight: 700;
             color: #ffffff;
             margin-bottom: 10px;
         }
         .con-card .con-info p {
-            font-size: 0.83em;
+            font-size: 13px;
             line-height: 165%;
             color: #F0EEE8;
-            opacity: 0.85;
         }
-
         #season-map {
             margin-bottom: 40px;
         }
@@ -200,7 +187,7 @@
             display: inline-block;
             background-color: #C8A84B; 
             color: #03030A;
-            font-size: 0.75em;
+            font-size: 12px;
             font-weight: 700;
             padding: 2px 8px;
             border-radius: 3px;
@@ -208,68 +195,58 @@
         }
         .season-item .season-info h3 {
             font-family: 'Nanum Myeongjo', serif;
-            font-size: 1.1em;
+            font-size: 18px;
             font-weight: 700;
             color: #ffffff;
             margin-bottom: 6px;
         }
         .season-item .season-info p {
-            font-size: 0.82em;
+            font-size: 13px;
             color: #F0EEE8;
             line-height: 155%;
-            opacity: 0.85;
         }
-
         footer {
             background-color: #03030A;
             text-align: center;
             padding: 30px 20px;
             margin-top: 20px;
-            font-size: 0.8em;
+            font-size: 13px;
             color: #666677;
             border-top: 1px solid #1E1A3A; 
-            letter-spacing: 0.05em;
         }
-
         @media only screen and (max-width: 768px) {
             .constellation-grid { grid-template-columns: 1fr; }
             .con-card { grid-template-columns: 120px 1fr; }
             .con-card img { width: 120px; height: 120px; }
             .season-grid { grid-template-columns: 1fr; }
             nav#navbar ul { flex-wrap: wrap; justify-content: center; }
-            nav#navbar li:not(:last-child)::after { display: none; }
         }
-        
     </style>
 </head>
 <body>
 
     <header>
         <h1>별자리도감</h1>
-        <a href="index.html"><p>별빛기행 · 홈으로 돌아가기 </p></a>
+        <a href="index.html"><p>별빛기행 · 홈으로 돌아가기</p></a>
     </header>
 
-    <!-- 메뉴바 -->
     <nav id="navbar">
         <ul>
-            <li><a href="1.html" class="active">별자리도감</a></li>
-            <li><a href="2.html">태양계</a></li>
-            <li><a href="3.html">천문현상</a></li>
-            <li><a href="4.html">별 관측 명소</a></li>
+            <li><a href="1.html" class="active">별자리도감</a></li>│
+            <li><a href="2.html">태양계</a></li>│
+            <li><a href="3.html">천문현상</a></li>│
+            <li><a href="4.html">별 관측 명소</a></li>│
             <li><a href="5.html">우주 작품 추천</a></li>
         </ul>
     </nav>
 
-    <!-- 본문 -->
     <div class="content-wrap">
 
-        <!-- 페이지 인트로 -->
         <div class="page-intro">
             <h2>별자리도감</h2>
             <p>밤하늘의 별들을 무리 지어 연결하고 이름을 붙인 별자리는 고대인들의 상상력과 탐험의 역사에서 시작되었습니다. 현재 국제천문연맹(IAU)이 공인한 전 하늘의 공식 별자리는 총 88개입니다.<br>지구의 공전 운동 때문에 밤하늘에 보이는 별자리들은 계절에 따라 조금씩 변화하며, 각 계절을 대표하는 아름다운 길잡이 별들이 존재합니다.</p>
         </div>
 
-        <!-- 별자리 카드 -->
         <div id="constellations">
             <h3 class="section-title">대표 별자리</h3>
             <div class="constellation-grid">
@@ -340,7 +317,6 @@
             </div>
         </div>
 
-        <!-- 계절별 별자리 지도 -->
         <div id="season-map">
             <h3 class="section-title">계절별 별자리 지도</h3>
             <div class="season-grid">
